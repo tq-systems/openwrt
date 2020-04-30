@@ -22,7 +22,7 @@ define Package/layerscape-fman-ls1043ardb
   SECTION:=firmware
   CATEGORY:=Firmware
   TITLE:=NXP LS1043ARDB FMan ucode
-  DEPENDS:=@TARGET_layerscape
+  DEPENDS:=@TARGET_layerscape||TARGET_tqmls
   CONFIG:=fsl_fman_ucode_ls1043_r1.1_106_4_18.bin
 endef
 
@@ -30,7 +30,7 @@ define Package/layerscape-fman-ls1046ardb
   SECTION:=firmware
   CATEGORY:=Firmware
   TITLE:=NXP LS1046ARDB FMan ucode
-  DEPENDS:=@TARGET_layerscape
+  DEPENDS:=@TARGET_layerscape||TARGET_tqmls
   CONFIG:=fsl_fman_ucode_ls1046_r1.0_106_4_18.bin
 endef
 
