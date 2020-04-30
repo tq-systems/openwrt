@@ -48,6 +48,8 @@ CONFIG_TARGET_tqmls_tqmls10xxa=y
 CONFIG_TARGET_MULTI_PROFILE=y
 # CONFIG_TARGET_tqmls_tqmls10xxa_DEVICE_tqmls1043a-mbls10xxa is not set
 # CONFIG_TARGET_tqmls_tqmls10xxa_DEVICE_tqmls1046a-mbls10xxa is not set
+# CONFIG_TARGET_tqmls_tqmls10xxa_DEVICE_tqmls1043a-mbls10xxa-2g is not set
+# CONFIG_TARGET_tqmls_tqmls10xxa_DEVICE_tqmls1046a-mbls10xxa-8g is not set
 
 #
 # Target Devices
@@ -55,7 +57,9 @@ CONFIG_TARGET_MULTI_PROFILE=y
 # CONFIG_TARGET_ALL_PROFILES is not set
 # CONFIG_TARGET_PER_DEVICE_ROOTFS is not set
 CONFIG_TARGET_DEVICE_tqmls_tqmls10xxa_DEVICE_tqmls1043a-mbls10xxa=y
+CONFIG_TARGET_DEVICE_tqmls_tqmls10xxa_DEVICE_tqmls1043a-mbls10xxa-2g=y
 CONFIG_TARGET_DEVICE_tqmls_tqmls10xxa_DEVICE_tqmls1046a-mbls10xxa=y
+CONFIG_TARGET_DEVICE_tqmls_tqmls10xxa_DEVICE_tqmls1046a-mbls10xxa-8g=y
 CONFIG_HAS_SUBTARGETS=y
 CONFIG_HAS_DEVICES=y
 CONFIG_TARGET_BOARD="tqmls"
@@ -88,8 +92,12 @@ CONFIG_DEFAULT_odhcpd-ipv6only=y
 CONFIG_DEFAULT_opkg=y
 CONFIG_DEFAULT_ppp=y
 CONFIG_DEFAULT_ppp-mod-pppoe=y
+CONFIG_DEFAULT_u-boot-tq-tqmls1043a-mbls10xxa-2g-esdhc=y
+CONFIG_DEFAULT_u-boot-tq-tqmls1043a-mbls10xxa-2g-qspi=y
 CONFIG_DEFAULT_u-boot-tq-tqmls1043a-mbls10xxa-esdhc=y
 CONFIG_DEFAULT_u-boot-tq-tqmls1043a-mbls10xxa-qspi=y
+CONFIG_DEFAULT_u-boot-tq-tqmls1046a-mbls10xxa-8g-esdhc=y
+CONFIG_DEFAULT_u-boot-tq-tqmls1046a-mbls10xxa-8g-qspi=y
 CONFIG_DEFAULT_u-boot-tq-tqmls1046a-mbls10xxa-esdhc=y
 CONFIG_DEFAULT_u-boot-tq-tqmls1046a-mbls10xxa-qspi=y
 CONFIG_DEFAULT_uci=y
@@ -326,6 +334,7 @@ CONFIG_PKG_RELRO_FULL=y
 CONFIG_DEVEL=y
 # CONFIG_BROKEN is not set
 CONFIG_BINARY_FOLDER=""
+CONFIG_DOWNLOAD_FOLDER=""
 CONFIG_LOCALMIRROR=""
 CONFIG_AUTOREBUILD=y
 # CONFIG_AUTOREMOVE is not set
@@ -1499,8 +1508,12 @@ CONFIG_PACKAGE_usign=y
 #
 # Boot Loaders
 #
+CONFIG_PACKAGE_u-boot-tqmls1043a-mbls10xxa-2g-esdhc=y
+CONFIG_PACKAGE_u-boot-tqmls1043a-mbls10xxa-2g-qspi=y
 CONFIG_PACKAGE_u-boot-tqmls1043a-mbls10xxa-esdhc=y
 CONFIG_PACKAGE_u-boot-tqmls1043a-mbls10xxa-qspi=y
+CONFIG_PACKAGE_u-boot-tqmls1046a-mbls10xxa-8g-esdhc=y
+CONFIG_PACKAGE_u-boot-tqmls1046a-mbls10xxa-8g-qspi=y
 CONFIG_PACKAGE_u-boot-tqmls1046a-mbls10xxa-esdhc=y
 CONFIG_PACKAGE_u-boot-tqmls1046a-mbls10xxa-qspi=y
 
