@@ -28,26 +28,50 @@ define U-Boot/Default
 endef
 
 define U-Boot/tqmls1043a-mbls10xxa-qspi
-  NAME:=TQMLS1043A qspi boot
+  NAME:=TQMLS1043A qspi boot 1GB Variant
   UBOOT_CONFIG:=tqmls1043a_mbls10xxa_qspi
   UBOOT_IMAGE:=u-boot-pbl.bin
 endef
 
 define U-Boot/tqmls1043a-mbls10xxa-esdhc
-  NAME:=TQMLS1043A emmc boot
+  NAME:=TQMLS1043A emmc boot 1GB Variant
   UBOOT_CONFIG:=tqmls1043a_mbls10xxa_esdhc
   UBOOT_IMAGE:=u-boot-with-spl-pbl.bin
 endef
 
 define U-Boot/tqmls1046a-mbls10xxa-qspi
-  NAME:=TQMLS1046A qspi boot
+  NAME:=TQMLS1046A qspi boot 2GB Variant
   UBOOT_CONFIG:=tqmls1046a_mbls10xxa_qspi
   UBOOT_IMAGE:=u-boot-pbl.bin
 endef
 
 define U-Boot/tqmls1046a-mbls10xxa-esdhc
-  NAME:=TQMLS10436 emmc boot
+  NAME:=TQMLS1046 emmc boot 2GB Variant
   UBOOT_CONFIG:=tqmls1046a_mbls10xxa_esdhc
+  UBOOT_IMAGE:=u-boot-with-spl-pbl.bin
+endef
+
+define U-Boot/tqmls1043a-mbls10xxa-2g-qspi
+  NAME:=TQMLS1043A qspi boot 2GB Variant
+  UBOOT_CONFIG:=tqmls1043a_mbls10xxa_qspi_2g
+  UBOOT_IMAGE:=u-boot-pbl.bin
+endef
+
+define U-Boot/tqmls1043a-mbls10xxa-2g-esdhc
+  NAME:=TQMLS1043A emmc boot 2GB Variant
+  UBOOT_CONFIG:=tqmls1043a_mbls10xxa_esdhc_2g
+  UBOOT_IMAGE:=u-boot-with-spl-pbl.bin
+endef
+
+define U-Boot/tqmls1046a-mbls10xxa-8g-qspi
+  NAME:=TQMLS1046A qspi boot 8GB Variant
+  UBOOT_CONFIG:=tqmls1046a_mbls10xxa_qspi_8g
+  UBOOT_IMAGE:=u-boot-pbl.bin
+endef
+
+define U-Boot/tqmls1046a-mbls10xxa-8g-esdhc
+  NAME:=TQMLS10436 emmc boot 8GB Variant
+  UBOOT_CONFIG:=tqmls1046a_mbls10xxa_esdhc_8g
   UBOOT_IMAGE:=u-boot-with-spl-pbl.bin
 endef
 
@@ -58,7 +82,11 @@ endef
 UBOOT_TARGETS := tqmls1043a-mbls10xxa-esdhc \
 		 tqmls1043a-mbls10xxa-qspi \
 		 tqmls1046a-mbls10xxa-esdhc \
-		 tqmls1046a-mbls10xxa-qspi
+		 tqmls1046a-mbls10xxa-qspi \
+		 tqmls1043a-mbls10xxa-2g-esdhc \
+		 tqmls1043a-mbls10xxa-2g-qspi \
+		 tqmls1046a-mbls10xxa-8g-esdhc \
+		 tqmls1046a-mbls10xxa-8g-qspi
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(STAGING_DIR_IMAGE);
