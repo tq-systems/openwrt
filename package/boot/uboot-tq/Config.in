@@ -1,0 +1,45 @@
+menu "RCW TQMLS1043A Configuration"
+	depends on PACKAGE_u-boot-tqmls1043a-mbls10xxa-esdhc || PACKAGE_u-boot-tqmls1043a-mbls10xxa-qspi
+
+config UBOOT_RCW_CONFIG_TQMLS1043A
+	string
+	prompt "RCW configuration"
+	default "TQMLS1043A_RCW_3358"
+	help
+		The reset configuration word (RCW) for the board is included in
+		the u-boot source code. Various SerDes configurations are
+		supported. One of the following is supported:
+			-TQMLS1043A_RCW_1355
+			-TQMLS1043A_RCW_1455
+			-TQMLS1043A_RCW_3335
+			-TQMLS1043A_RCW_3355
+			-TQMLS1043A_RCW_3358 (default)
+endmenu
+
+menu "RCW TQMLS1046A Configuration"
+	depends on PACKAGE_u-boot-tqmls1046a-mbls10xxa-esdhc || PACKAGE_u-boot-tqmls1046a-mbls10xxa-qspi
+
+config UBOOT_RCW_CONFIG_TQMLS1046A
+	string
+	prompt "RCW configuration"
+	default "TQMLS1046A_RCW_3333_5559"
+	help
+		The reset configuration word (RCW) for the board is included in
+		the u-boot source code. Various SerDes configurations are
+		supported. One of the following is supported:
+			-TQMLS1046A_RCW_1040_5506
+			-TQMLS1046A_RCW_1040_5559
+			-TQMLS1046A_RCW_1040_5577
+			-TQMLS1046A_RCW_1040_5A06
+			-TQMLS1046A_RCW_1040_5A59
+			-TQMLS1046A_RCW_1133_5506
+			-TQMLS1046A_RCW_1133_5559
+			-TQMLS1046A_RCW_1133_5577
+			-TQMLS1046A_RCW_1133_5A06
+			-TQMLS1046A_RCW_1133_5A59
+			-TQMLS1046A_RCW_3333_5506
+			-TQMLS1046A_RCW_3333_5559 (default)
+			-TQMLS1046A_RCW_3333_5577
+			-TQMLS1046A_RCW_3333_5A06
+			-TQMLS1046A_RCW_3333_5A59
+endmenu
