@@ -20,7 +20,7 @@ endef
 define Build/boot-part
 	rm -f $@.boot
 	mkfs.fat $@.boot -C 32708
-	mcopy -i $@.boot $(DEVICE_DTS_DIR)/$(DEVICE_DTS).dtb ::fsl-$(1).dtb
+	mcopy -i $@.boot $(DEVICE_DTS_DIR)/$(DEVICE_DTS).dtb ::$(notdir $(DEVICE_DTS)).dtb
 	mcopy -i $@.boot $(IMAGE_KERNEL) ::linuximage
 	$(INSTALL_DATA) $@.boot $(STAGING_DIR_IMAGE)/$(1).boot
 endef
