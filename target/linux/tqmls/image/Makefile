@@ -43,6 +43,12 @@ define Build/ls-install-kernel
 		$(STAGING_DIR_IMAGE)/Image;
 endef
 
+define Build/ls-install-fman
+	$(INSTALL_DATA) \
+		$(STAGING_DIR_IMAGE)/$(1) \
+		$(BIN_DIR)/$1
+endef
+
 define Build/ls-clean
 	rm -f $@
 endef

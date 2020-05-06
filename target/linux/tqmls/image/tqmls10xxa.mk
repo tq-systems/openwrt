@@ -22,7 +22,7 @@ define Device/tqmls1043a-mbls10xxa
   KERNEL = kernel-bin
   MKUBIFS_OPTS := -m 1 -e 65408 -c 640
 IMAGES := general firmware_sdcard.img firmware_qspi.bin root.ubi
-  IMAGE/general := ls-install-kernel | ls-install-dtb
+  IMAGE/general := ls-install-kernel | ls-install-dtb | ls-install-fman ls1043ardb-fman.bin
   IMAGE/firmware_sdcard.img := \
     ls-clean | \
     ls-append-sdhead $(1) | pad-to 4K | \
@@ -60,7 +60,7 @@ define Device/tqmls1046a-mbls10xxa
   KERNEL = kernel-bin
   MKUBIFS_OPTS := -m 1 -e 65408 -c 640
 IMAGES := general firmware_sdcard.img firmware_qspi.bin root.ubi
-  IMAGE/general := ls-install-kernel | ls-install-dtb
+  IMAGE/general := ls-install-kernel | ls-install-dtb | ls-install-fman ls1046ardb-fman.bin
   IMAGE/firmware_sdcard.img := \
     ls-clean | \
     ls-append-sdhead $(1) | pad-to 4K | \
@@ -98,7 +98,7 @@ define Device/tqmls1043a-mbls10xxa-2g
   KERNEL = kernel-bin
   MKUBIFS_OPTS := -m 1 -e 65408 -c 640
 IMAGES := general firmware_sdcard.img firmware_qspi.bin root.ubi
-  IMAGE/general := ls-install-kernel | ls-install-dtb
+  IMAGE/general := ls-install-kernel | ls-install-dtb | ls-install-fman ls1043ardb-fman.bin
   IMAGE/firmware_sdcard.img := \
     ls-clean | \
     ls-append-sdhead $(1) | pad-to 4K | \
@@ -136,7 +136,7 @@ define Device/tqmls1046a-mbls10xxa-8g
   KERNEL = kernel-bin
   MKUBIFS_OPTS := -m 1 -e 65408 -c 640
 IMAGES := general firmware_sdcard.img firmware_qspi.bin root.ubi
-  IMAGE/general := ls-install-kernel | ls-install-dtb
+  IMAGE/general := ls-install-kernel | ls-install-dtb | ls-install-fman ls1046ardb-fman.bin
   IMAGE/firmware_sdcard.img := \
     ls-clean | \
     ls-append-sdhead $(1) | pad-to 4K | \
