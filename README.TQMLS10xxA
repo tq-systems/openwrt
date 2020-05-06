@@ -1,0 +1,56 @@
+This is the openwrt buildsystem for the TQMLS10XXA modules.
+
+Supported devices:
+- TQMLS1043A (1GB RAM)
+- TQMLS1043A (2GB RAM)
+- TQMLS1046A (2GB RAM)
+- TQMLS1046A (8GB RAM)
+
+Build:
+- make menuconfig
+	Configuration. Alternatively ci/tqmls10xx_defconfig can be copied to .config
+	Choose Target System: TQ NXP Layerscape modules and Subtarget TQMLS1043A and
+	TQMLS1046A based boards. In Target Profile the board can be choosen.
+or:
+- cp ci/tqmls10xx_defconfig .config
+	Copy reasonable default configuration.
+	Builds for all variants.
+- make world
+
+Build artifacts can be found under bin/targets/tqmls/tqmls10xxa
+- Image:
+	The Linux Kernel
+- fsl-tqmls10[43|46]a-mbls10xxa.dtb:
+	Device Trees
+- ls104[3|6]ardb-fman.bin:
+	Fman Firmware needed for Ethernet.
+- openwrt-tqmls-tqmls10xxa-tqmls[43|46]a-mbls10xxa-[Xg]-ext4-firmware_sdcard.img:
+	SD-Card/emmc Image containing Bootloader, RCW, Device Tree, Fman Firmware
+	Kernel, and rootfs
+	For Variant with X GB RAM
+- openwrt-tqmls-tqmls10xxa-tqmls[43|46]a-mbls10xxa-[Xg]-ubifs-firmware_qspi.img:
+	Complete Image for QSPI. Write to QSPI from U-Boot with e.g.:
+	tftp openwrt-tqmls-tqmls10xxa-tqmls[43|46]a-mbls10xxa-[Xg]-ubifs-firmware_qspi.img;
+	sf probe; sf update $loadaddr 0 $filesize;
+- openwrt-tqmls-tqmls10xxa-tqmls[43|46]a-mbls10xxa-[Xg]-ubifs-root.ubi:
+	UBIFS Rootfs Filesystem for QSPI. Write to QSPI with:
+	sf probe; sf update $loadaddr rootfs $filesize;
+- u-boot-tqmls10[43|46]a-mbls10xxa-[Xg-]-[esdhc|qspi]/
+	The U-Boot Bootloader containing the RCW
+
+The QSPI-Nor-Flash Layout:
+#: name                size            offset          mask_flags
+0: rcw_uboot           0x000d0000      0x00000000      0
+1: env                 0x00010000      0x000d0000      0
+2: fmucode             0x00010000      0x000e0000      0
+3: dtb                 0x00010000      0x000f0000      0
+4: kernel              0x01700000      0x00100000      0
+5: rootfs              0x02800000      0x01800000      0
+
+SD/EMMC Layout:
+#  - ---------- ------- ------------- --------- ------------- -------------
+# | |  u-boot  |  env  | fman-ucode  |  /boot  |    rootfs   |
+#  - ---------- ------- ------------- --------- ------------- -------------
+# ^ ^          ^       ^             ^         ^
+# | |          |       |             |         |
+# 0 4kiB     3MiB    9MiB          16MiB     48MiB
